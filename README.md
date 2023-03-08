@@ -56,7 +56,7 @@ Users should be able to:
 
 ### Continued development
 
-- Daily tutorials and projects in HTML5, CSS3, Javascrip, Bootstrap, Sass/SCSS. For now, in time I will go re-learn React ect.
+- Daily tutorials and projects in HTML5, CSS3, Javascript, jQuery, Bootstrap, and Sass/SCSS. For now.  In time I will go re-learn React ect, or what's needed.
 
 ### Useful resources
 
