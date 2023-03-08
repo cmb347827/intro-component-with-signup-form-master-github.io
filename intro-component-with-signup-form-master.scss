@@ -1,0 +1,183 @@
+//beautified at https://codebeautify.org/scss-beautifier on 3-7-2023
+
+
+$container__form-xs: 375;
+$container__form-sm: 576;
+$container__form-md: 768;
+$container__form-lg: 992;
+$container__form-xl: 1200;
+$container__form-xxl: 1400;
+
+$container__form-xxl-min: 1399;
+$font-size: 16px;
+//I know Bootstrap has font-weight classes available, but I prefer to use SCSS as the html is a bit less cluttered.
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$colors: (
+  Red: hsl(0, 100%, 74%),
+  Green: hsl(154, 59%, 51%),
+  Blue: hsl(248, 32%, 49%),
+  Dark Blue: hsl(249, 10%, 26%),
+  Grayish Blue: hsl(246, 25%, 77%),
+  White: hsl(360, 100%, 100%),
+);
+$fallback-colors: (Crimson DarkGreen CornflowerBlue DarkBlue LightBlue Snow);
+
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+.icon-error {
+  background: url("https://raw.githubusercontent.com/cmb347827/intro-component-with-signup-form-master-github.io/main/icon-error.svg")
+    right center no-repeat;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: $font-weight-normal;
+
+  @media screen and (min-width: $container__form-xxl * 1px) {
+    background: map-get($colors, Red)
+      url("https://i.postimg.cc/7hMzQWnJ/bg-intro-desktop.png") no-repeat center
+      center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+h1 {
+  font-weight: $font-weight-bold;
+}
+
+main {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+
+  .container {
+    @include width($container__form-xs);
+    @include padding(25px);
+
+    .row > div {
+      perspective: 1px;
+    }
+    .blue {
+      //adding Bootstrap '.shadow' to this  same div's class list instead added a blurry shadow, which is not what's needed here.
+      box-shadow: 0px 10px hsla(210, 29%, 24%, 0.3);
+      @include bg-color(map-get($colors, Blue), nth($fallback-colors, 3));
+      @include padding(20px);
+      span {
+        font-weight: $font-weight-semi-bold;
+      }
+    }
+    form {
+      box-shadow: 0px 10px hsla(210, 29%, 24%, 0.3);
+      @include bg-color(map-get($colors, White), nth($fallback-colors, 6));
+      @include padding(20px);
+      
+      input {
+        @include margin(15px);
+        @include padding(9px);
+        border: 1px solid map-get($colors, Grayish Blue);
+        @include font-color(
+          map-get($colors, Dark Blue),
+          nth($fallback-colors, 4)
+        );
+        font-weight: $font-weight-semi-bold;
+        @include border-radius(8px);
+        width: 300px;
+      }
+      label {
+        height: 20px;
+        p {
+          //only in case the user types an incorrect format entry in the form, will this apply (see the JS file).
+          @include font-color(map-get($colors, Red), nth($fallback-colors, 1));
+        }
+      }
+      .btn-primary {
+        @include bg-color(map-get($colors, Green), nth($fallback-colors, 2));
+        border: none;
+        width: 300px;
+		&:hover{
+		    @include bg-color(lighten(map-get($colors, Green),12), nth($fallback-colors, 2));
+		}
+      }
+      p {
+        @include font-color(
+          map-get($colors, Grayish Blue),
+          nth($fallback-colors, 5)
+        );
+      }
+      a {
+        @include font-color(map-get($colors, Red), nth($fallback-colors, 1));
+      }
+      @media screen and (min-width: $container__form-xxl * 1px) {
+        @include padding(50px);
+        input,
+        .btn-primary {
+          width: 500px;
+        }
+      }
+    }
+    @media screen and (max-width: $container__form-xxl-min * 1px) {
+      background: map-get($colors, Red)
+        url("https://i.postimg.cc/y6yz7Cng/bg-intro-mobile.png") no-repeat
+        center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  }
+
+  @media screen and (min-width: $container__form-xxl * 1px) {
+    .container {
+      @include width($container__form-xxl);
+    }
+  }
+}
+footer {
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}

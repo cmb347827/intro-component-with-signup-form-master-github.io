@@ -1,0 +1,102 @@
+.icon-error {
+  background: url("https://raw.githubusercontent.com/cmb347827/intro-component-with-signup-form-master-github.io/main/icon-error.svg") right center no-repeat; }
+
+*,
+::before,
+::after {
+  box-sizing: border-box; }
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; }
+  @media screen and (min-width: 1400px) {
+    html,
+    body {
+      background: #ff7a7a url("https://i.postimg.cc/7hMzQWnJ/bg-intro-desktop.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; } }
+
+h1 {
+  font-weight: 700; }
+
+main {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+  place-content: center; }
+  main .container {
+    width: 375px;
+    padding: 25px; }
+    main .container .row > div {
+      perspective: 1px; }
+    main .container .blue {
+      box-shadow: 0px 10px rgba(43, 61, 79, 0.3);
+      background-color: CornflowerBlue;
+      background-color: #6055a5;
+      padding: 20px; }
+      main .container .blue span {
+        font-weight: 600; }
+    main .container form {
+      box-shadow: 0px 10px rgba(43, 61, 79, 0.3);
+      background-color: Snow;
+      background-color: white;
+      padding: 20px; }
+      main .container form input {
+        margin: 15px;
+        padding: 9px;
+        border: 1px solid #b9b6d3;
+        color: DarkBlue;
+        color: #3e3c49;
+        font-weight: 600;
+        border-radius: 8px;
+        width: 300px; }
+      main .container form label {
+        height: 20px; }
+        main .container form label p {
+          color: Crimson;
+          color: #ff7a7a; }
+      main .container form .btn-primary {
+        background-color: DarkGreen;
+        background-color: #38cc8c;
+        border: none;
+        width: 300px; }
+        main .container form .btn-primary:hover {
+          background-color: DarkGreen;
+          background-color: #69d8a8; }
+      main .container form p {
+        color: LightBlue;
+        color: #b9b6d3; }
+      main .container form a {
+        color: Crimson;
+        color: #ff7a7a; }
+      @media screen and (min-width: 1400px) {
+        main .container form {
+          padding: 50px; }
+          main .container form input,
+          main .container form .btn-primary {
+            width: 500px; } }
+    @media screen and (max-width: 1399px) {
+      main .container {
+        background: #ff7a7a url("https://i.postimg.cc/y6yz7Cng/bg-intro-mobile.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; } }
+  @media screen and (min-width: 1400px) {
+    main .container {
+      width: 1400px; } }
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center; }
+footer .attribution a {
+  color: #3e52a3; }
+
+/*# sourceMappingURL=intro-component-with-signup-form-master.css.map */
